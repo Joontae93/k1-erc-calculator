@@ -1,7 +1,7 @@
 {
-  "name": "kj-project-boilerplate",
-  "version": "1.0.0",
-  "description": "A boilerplate for KJ's projects",
+  "name": "erc-calculator",
+  "version": "1.2.0",
+  "description": "Adding features to the ERC Calculator at https://kingdomone.co/erc",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html"
