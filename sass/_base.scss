@@ -1,0 +1,39 @@
+@use './abstracts/mixins';
+@use './abstracts/variables';
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	box-sizing: border-box;
+	font-size: 1.6rem;
+	font-family: variables.$font-body;
+}
+header,
+main,
+footer {
+	padding: 6.5rem 0;
+}
+header {
+	background-color: variables.$color-primary;
+	@include mixins.linearGradientDarken(165deg);
+	color: white;
+	@include mixins.displayFlex(column, center, center);
+}
+footer {
+	@extend header;
+	background-color: variables.$color-grey;
+}
+main {
+	width: 88%;
+	max-width: 1200px;
+	margin: 0 auto;
+}

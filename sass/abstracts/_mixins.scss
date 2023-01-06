@@ -1,0 +1,79 @@
+@use './variables';
+///////////////////
+// Gradients /////
+/////////////////
+
+@mixin linearGradientDarken($direction: 135deg) {
+	background-image: linear-gradient(
+		$direction,
+		transparent 30%,
+		rgba(black, 0.3)
+	);
+}
+@mixin displayFlex(
+	$direction: row,
+	$main: flex-start,
+	$cross: flex-start,
+	$wrap: wrap
+) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $main;
+	align-items: $cross;
+}
+@mixin fadeIn {
+	animation: fadeInAnimation ease 0.5s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+
+	@keyframes fadeInAnimation {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+}
+
+// MEDIA QUERY MANAGER
+// Assumes 1rem = 10px
+/*
+Desktop - 1200px
+Laptop - 979px
+Tablet - 767px
+iPhone - 480px
+Tiny - 320px
+*/
+@mixin respond($breakpoint) {
+	@if $breakpoint == Tiny {
+		@media only screen and (max-width: 20em) {
+			@content;
+		}
+	}
+	@if $breakpoint == iPhone {
+		@media only screen and (max-width: 30em) {
+			@content;
+		}
+	}
+	@if $breakpoint == Tablet {
+		@media only screen and (max-width: 48em) {
+			@content;
+		}
+	}
+	@if $breakpoint == Laptop {
+		@media only screen and (max-width: 61em) {
+			@content;
+		}
+	}
+	@if $breakpoint == Desktop {
+		@media only screen and (max-width: 75em) {
+			@content;
+		}
+	} @else {
+		@media only screen and (max-width: $breakpoint) {
+			@content;
+		}
+	}
+}
