@@ -1,0 +1,63 @@
+.calculator {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin-bottom: 1rem;
+	.container {
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		label {
+			font-weight: 700;
+		}
+		&--ministry {
+			margin-bottom: 2rem;
+			input,
+			select {
+				margin-bottom: 2rem;
+			}
+		}
+		&--years {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+			align-items: baseline;
+			label {
+				margin-left: 5px;
+				margin-right: 2rem;
+				margin-bottom: 2rem;
+			}
+		}
+		&--employees {
+			margin-bottom: 2rem;
+		}
+		.ppp {
+			@extend .container--employees;
+		}
+	}
+	.col {
+		padding: 1rem;
+		max-width: 50%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+
+		.output {
+			background-color: white;
+			box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.35);
+			border: 3px solid #0a614b;
+			border-radius: 10px;
+			padding: 2em;
+		}
+		form.calculator button {
+			margin-bottom: 2em;
+		}
+	}
+}
